@@ -28,3 +28,22 @@ def add():
                 return f"Something went wrong: {e}"
     else:
         return render_template('add.html')
+
+
+@app.route('/update/<int:id>/', methods=['GET', 'POST'])
+def update(id=None):
+    employee = Employee.query.get_or_404(id)
+    if request.method == 'POST':
+        employee.name = request.form['name']
+        employee.surname = request.form['surname']
+        employee.email = request.form['email']
+        employee.phone = request.form['number']
+        employee.position = request.form['position']
+        try:
+            db.session.commit()
+            flash('Employee successfully updated!')
+            return redirect(url_for('index'))
+        except Exception as e:
+            return f"Something went wrong: {e}"
+    else:
+        return render_template('update.html', employee=employee)
