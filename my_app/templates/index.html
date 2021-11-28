@@ -42,7 +42,7 @@
                 <td>{{ employee.position }}</td>
                 <td>
                     <a href="/update/{{ employee.id }}" class="btn btn-warning btn-xs">Edit</a>
-                    <a href="#" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure To Delete?')">Delete</a>
+                    <a href="/delete/{{ employee.id }}" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure To Delete?')">Delete</a>
                 </td>
             </tr>
         {% endfor %}

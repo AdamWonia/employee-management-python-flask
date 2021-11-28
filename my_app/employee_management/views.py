@@ -47,3 +47,14 @@ def update(id=None):
             return f"Something went wrong: {e}"
     else:
         return render_template('update.html', employee=employee)
+
+
+@app.route('/delete/<int:id>/')
+def delete(id=None):
+    employee = Employee.query.get_or_404(id)
+    try:
+        db.session.delete(employee)
+        db.session.commit()
+        return redirect(url_for('index'))
+    except Exception as e:
+        return f"Something went wrong when updating the task: {e}"
