@@ -3,5 +3,10 @@
 {% block title %} Register page {% endblock %}
 
 {% block body %}
-
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        {{ form.username }}
+        {{ form.password }}
+        {{ form.submit }}
+    </form>
 {% endblock %}

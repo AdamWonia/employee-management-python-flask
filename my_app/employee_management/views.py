@@ -1,6 +1,6 @@
 from my_app import app, db
 from flask import render_template, request, flash, redirect, url_for
-from my_app.employee_management.models import Employee
+from my_app.employee_management.models import Employee, LoginForm, RegisterForm
 
 
 @app.route('/home', methods=['GET'])
@@ -60,11 +60,14 @@ def delete(id=None):
         return f"Something went wrong when updating the task: {e}"
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def login():
-    return render_template('login.html')
+    form = LoginForm()
+    return render_template('login.html', form=form)
 
 
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST'])
 def register():
-    return render_template('register.html')
+    form = RegisterForm()
+    
+    return render_template('register.html', form=form)
