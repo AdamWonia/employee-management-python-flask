@@ -1,5 +1,8 @@
 from my_app import db
 from flask_login import UserMixin
+from wtforms import StringField, PasswordField, SubmitField
+from wtforms.validators import InputRequired, Length, ValidationError
+from flask_wtf import FlaskForm
 
 
 class Employee(db.Model):
@@ -32,3 +35,24 @@ class User(db.Model, UserMixin):
 
     def __str__(self):
         return f'{self.username}'
+
+
+class LoginForm(FlaskForm):
+    username = StringField(validators=[InputRequired(), Length(min=4, max=20)],
+                           render_kw={"placeholder": "Username"})
+    password = PasswordField(validators=[InputRequired(), Length(min=4, max=20)],
+                             render_kw={"placeholder": "Password"})
+    submit = SubmitField("Login")
+
+
+class RegisterForm(FlaskForm):
+    username = StringField(validators=[InputRequired(), Length(min=4, max=20)],
+                           render_kw={"placeholder": "Username"})
+    password = PasswordField(validators=[InputRequired(), Length(min=4, max=20)],
+                             render_kw={"placeholder": "Password"})
+    submit = SubmitField("Register")
+
+    def validate_username(self, username):
+        existing_username = User.query.filter_by(username=username.data).first()
+        if existing_username:
+            raise ValidationError("This username already exists! Please use a different one")
