@@ -3,33 +3,35 @@
 {% block title %} Add new employee {% endblock %}
 
 {% block body %}
-    <div class="jumbotron p-3">
-        <div class="well text-center">
-            <h1>Add new employee</h1>
+    <div class="container">
+        <div class="jumbotron p-3">
+            <div class="well text-center">
+                <h1>Add new employee</h1>
+            </div>
         </div>
-    </div>
 
-    <form method="POST" action="">
-        <div class="mb-3">
-            <label class="form-label" for="name-form">Name</label>
-            <input class="form-control" type="text" name="name" id="name-form">
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="surname-form">Surname</label>
-            <input class="form-control" type="text" name="surname" id="surname-form">
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="email-form">Email</label>
-            <input class="form-control" type="email" name="email" id="email-form">
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="number-form">Phone number</label>
-            <input class="form-control" type="number" name="number" id="number-form">
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="position-form">Position</label>
-            <input class="form-control" type="text" name="position" id="position-form">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+        <form method="POST" action="">
+            <div class="mb-3">
+                <label class="form-label" for="name-form">Name</label>
+                <input class="form-control" type="text" name="name" id="name-form">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="surname-form">Surname</label>
+                <input class="form-control" type="text" name="surname" id="surname-form">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="email-form">Email</label>
+                <input class="form-control" type="email" name="email" id="email-form">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="number-form">Phone number</label>
+                <input class="form-control" type="number" name="number" id="number-form">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="position-form">Position</label>
+                <input class="form-control" type="text" name="position" id="position-form">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 {% endblock %}

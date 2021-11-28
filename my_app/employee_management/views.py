@@ -58,3 +58,13 @@ def delete(id=None):
         return redirect(url_for('index'))
     except Exception as e:
         return f"Something went wrong when updating the task: {e}"
+
+
+@app.route('/')
+def login():
+    return render_template('login.html')
+
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
