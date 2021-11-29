@@ -3,10 +3,27 @@
 {% block title %} Register page {% endblock %}
 
 {% block body %}
-    <form method="POST" action="">
-        {{ form.hidden_tag() }}
-        {{ form.username }}
-        {{ form.password }}
-        {{ form.submit }}
-    </form>
+<div>
+    <div class="well text-center login-header">
+        <h1>Register page</h1>
+    </div>
+
+    <div>
+        <div class="login-form">
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <div class="mb-3">
+                    {{ form.username }}
+                </div>
+                <div class="mb-3" style="padding-top: 10px;">
+                    {{ form.password }}
+                </div>
+                <div class="mb-3">
+                    {{ form.submit }}
+                </div>
+                <a href="/" class="a-tag">Already have an account? Sign in here...</a>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
