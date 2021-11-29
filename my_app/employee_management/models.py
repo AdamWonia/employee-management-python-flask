@@ -3,6 +3,7 @@ from flask_login import UserMixin
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
 from flask_wtf import FlaskForm
+from flask import flash
 
 
 class Employee(db.Model):
@@ -55,4 +56,7 @@ class RegisterForm(FlaskForm):
     def validate_username(self, username):
         existing_username = User.query.filter_by(username=username.data).first()
         if existing_username:
-            raise ValidationError("This username already exists! Please use a different one")
+            flash("This username already exists! Please use a different one")
+            raise ValidationError()
+        else:
+            flash("Account created successfully! Please sign in")

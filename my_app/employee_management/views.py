@@ -3,8 +3,6 @@ from flask import render_template, request, flash, redirect, url_for
 from my_app.employee_management.models import Employee, User, LoginForm, RegisterForm
 from flask_login import login_user, LoginManager, login_required, logout_user, current_user
 
-# new lines
-# add login_required decorator
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = "login"
@@ -16,12 +14,14 @@ def load_user(id):
 
 
 @app.route('/home', methods=['GET'])
+@login_required
 def index():
     employees = Employee.query.all()
     return render_template('index.html', employees=employees)
 
 
 @app.route('/add', methods=['POST', 'GET'])
+@login_required
 def add():
     if request.method == 'POST':
         name = request.form['name']
@@ -43,6 +43,7 @@ def add():
 
 
 @app.route('/update/<int:id>/', methods=['GET', 'POST'])
+@login_required
 def update(id=None):
     employee = Employee.query.get_or_404(id)
     if request.method == 'POST':
@@ -62,6 +63,7 @@ def update(id=None):
 
 
 @app.route('/delete/<int:id>/')
+@login_required
 def delete(id=None):
     employee = Employee.query.get_or_404(id)
     try:
@@ -80,7 +82,10 @@ def login():
         if user:
             if bcrypt.check_password_hash(user.password, form.password.data):
                 login_user(user)
+                flash("Successfully signed in!")
                 return redirect(url_for('index'))
+            else:
+                flash("Invalid password or login!")
 
     return render_template('login.html', form=form)
 
