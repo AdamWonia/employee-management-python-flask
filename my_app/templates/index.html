@@ -10,9 +10,11 @@
             </div>
         </div>
 
-        <h2>Manage Employees</b>
-            <a href="{{ url_for('add') }}" class="btn btn-success float-right">Add new employees</a>
-        </h2>
+        <div class="index-manage-label">
+            <h2>Manage Employees</b>
+                <a href="{{ url_for('add') }}" class="btn btn-success float-right" style="">Add new employees</a>
+            </h2>
+        </div>
 
         {% with messages = get_flashed_messages() %}
             {% if messages %}
