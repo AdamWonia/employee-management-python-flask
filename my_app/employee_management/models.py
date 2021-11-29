@@ -45,6 +45,9 @@ class LoginForm(FlaskForm):
                              render_kw={"placeholder": "Password"})
     submit = SubmitField("Login")
 
+    def __str__(self):
+        return f'{self.username}'
+
 
 class RegisterForm(FlaskForm):
     username = StringField(validators=[InputRequired(), Length(min=4, max=20)],
@@ -60,3 +63,6 @@ class RegisterForm(FlaskForm):
             raise ValidationError()
         else:
             flash("Account created successfully! Please sign in")
+
+    def __str__(self):
+        return f'{self.username}'

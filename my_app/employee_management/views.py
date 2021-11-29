@@ -69,6 +69,7 @@ def delete(id=None):
     try:
         db.session.delete(employee)
         db.session.commit()
+        flash('Employee successfully deleted!')
         return redirect(url_for('index'))
     except Exception as e:
         return f"Something went wrong when updating the task: {e}"
@@ -86,7 +87,6 @@ def login():
                 return redirect(url_for('index'))
             else:
                 flash("Invalid password or login!")
-
     return render_template('login.html', form=form)
 
 
@@ -99,7 +99,6 @@ def register():
         db.session.add(new_user)
         db.session.commit()
         return redirect(url_for('login'))
-
     return render_template('register.html', form=form)
 
 

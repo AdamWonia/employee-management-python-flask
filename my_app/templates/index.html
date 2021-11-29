@@ -10,13 +10,11 @@
                 <a href="/logout" class="btn btn-danger btn-xs">Logout</a>
             </div>
         </div>
-
         <div class="index-manage-label">
             <h2>Manage Employees</b>
                 <a href="{{ url_for('add') }}" class="btn btn-success float-right" style="">Add new employees</a>
             </h2>
         </div>
-
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
@@ -29,7 +27,6 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
-
         {% if employees %}
             <table class="table table-striped table-hover">
                 <tr>

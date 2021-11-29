@@ -3,33 +3,34 @@
 {% block title %} Update employee {% endblock %}
 
 {% block body %}
-    <div class="jumbotron p-3">
-        <div class="well text-center">
-            <h1>Add new employee</h1>
+    <div class="container">
+        <div class="jumbotron p-3">
+            <div class="well text-center">
+                <h1>Add new employee</h1>
+            </div>
         </div>
+        <form method="POST" action="">
+            <div class="mb-3">
+                <label class="form-label" for="name-form">Name</label>
+                <input class="form-control" type="text" name="name" value="{{ employee.name }}" id="name-form">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="surname-form">Surname</label>
+                <input class="form-control" type="text" name="surname" value="{{ employee.surname }}" id="surname-form">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="email-form">Email</label>
+                <input class="form-control" type="email" name="email" value="{{ employee.email }}" id="email-form">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="number-form">Phone number</label>
+                <input class="form-control" type="number" name="number" value="{{ employee.phone }}" id="number-form">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="position-form">Position</label>
+                <input class="form-control" type="text" name="position" value="{{ employee.position }}" id="position-form">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
-
-    <form method="POST" action="">
-        <div class="mb-3">
-            <label class="form-label" for="name-form">Name</label>
-            <input class="form-control" type="text" name="name" value="{{ employee.name }}" id="name-form">
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="surname-form">Surname</label>
-            <input class="form-control" type="text" name="surname" value="{{ employee.surname }}" id="surname-form">
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="email-form">Email</label>
-            <input class="form-control" type="email" name="email" value="{{ employee.email }}" id="email-form">
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="number-form">Phone number</label>
-            <input class="form-control" type="number" name="number" value="{{ employee.phone }}" id="number-form">
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="position-form">Position</label>
-            <input class="form-control" type="text" name="position" value="{{ employee.position }}" id="position-form">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
 {% endblock %}

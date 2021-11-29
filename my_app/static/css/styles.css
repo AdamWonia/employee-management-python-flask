@@ -24,6 +24,7 @@ body {
 
 .index-manage-label {
     padding: 5px;
+    margin: 5px;
     border: solid 1px #250f63;
     border-radius: 5px;
 }

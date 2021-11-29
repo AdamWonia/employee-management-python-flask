@@ -7,7 +7,6 @@
         <div class="well text-center login-header">
             <h1>Login page</h1>
         </div>
-
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
@@ -20,7 +19,6 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
-
         <div>
             <div class="login-form">
                 <form method="POST" action="">
