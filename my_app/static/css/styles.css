@@ -1,0 +1,23 @@
+body {
+    background-color: #e9ecef;
+}
+
+.login-header {
+    padding: 2rem 1rem;
+    background-color: #e9ecef;
+    border-radius: 0.3rem;
+}
+
+.login-form {
+    background-color: #c1b2eb;
+    border: solid 1px #250f63;
+    height: 100%;
+    padding-top: 8%;
+    padding-bottom: 8%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.a-tag {
+   color: #200b5c;
+}
