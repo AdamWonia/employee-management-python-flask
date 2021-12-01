@@ -22,9 +22,9 @@ body {
    color: #200b5c;
 }
 
-.index-manage-label {
+.index-label {
     padding: 5px;
     margin: 5px;
-    border: solid 1px #250f63;
+    border: solid 2px #250f63;
     border-radius: 5px;
 }
