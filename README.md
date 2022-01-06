@@ -19,7 +19,6 @@ This will create a virtual environment named **venv**. To activate the virtual e
 
 Next you have to install all required packages.
 
-
 ## Packages
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install all required packages, which are listed in the **requirements.txt** file. You can use the command below.
